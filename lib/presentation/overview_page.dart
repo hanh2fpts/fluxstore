@@ -44,34 +44,228 @@ class OverviewPage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Feature Products',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    'Show all',
-                    style: TextStyle(
-                        color: Color(0xFF9B9B9B), fontSize: 13, fontWeight: FontWeight.w400),
-                  )
-                ],
-              ),
+              TitleWidget(title: 'Feature Products'),
               SizedBox(
                 height: 20,
               ),
               ListFeatureProductWidget(),
               //banner 2
+              Banner2Widget(),
+              //recommend
               SizedBox(
                 height: 20,
               ),
-              Banner2Widget(),
-              //recommend
+              TitleWidget(title: 'Recommended'),
+              SizedBox(
+                height: 20,
+              ),
+              ListRecommendItemWidget(),
               //top collection
+              SizedBox(
+                height: 20,
+              ),
+              TitleWidget(title: 'Top Collection'),
+              SizedBox(
+                height: 20,
+              ),
+              Banner3Widget(
+                title: 'I Sale up to 40%',
+                description: 'FOR SLIM\n& BEAUTY',
+                height: 200,
+                imagePath: 'assets/images/banner3.png',
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Banner3Widget(
+                title: 'Summer Collection 2023',
+                description: 'Most sexy\n& fabulous\ndesign',
+                height: 300,
+                imagePath: 'assets/images/image_69.png',
+              )
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Banner3Widget extends StatelessWidget {
+  const Banner3Widget(
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.height,
+      required this.imagePath});
+  final String title;
+  final String description;
+  final double height;
+  final String imagePath;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFF8F8FA),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      height: height,
+      child: Stack(
+        children: [
+          Positioned(right: 0, child: _buildImage()),
+          Positioned(
+            left: 20,
+            top: 50,
+            child: Column(
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Color(0xFF777E90),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  description,
+                  style: const TextStyle(
+                    color: Color(0xFF353945),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _buildImage() {
+    return SizedBox(
+      width: 200,
+      height: height,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            child: SvgPicture.asset(
+              'assets/images/Ellipse1.svg',
+              height: 130,
+            ),
+          ),
+          Positioned(
+            child: Image.asset(
+              imagePath,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TitleWidget extends StatelessWidget {
+  const TitleWidget({
+    super.key,
+    required this.title,
+  });
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+        ),
+        const Text(
+          'Show all',
+          style: TextStyle(color: Color(0xFF9B9B9B), fontSize: 13, fontWeight: FontWeight.w400),
+        )
+      ],
+    );
+  }
+}
+
+class ListRecommendItemWidget extends StatefulWidget {
+  const ListRecommendItemWidget({super.key});
+
+  @override
+  State<ListRecommendItemWidget> createState() => _ListRecommendItemWidgetState();
+}
+
+class _ListRecommendItemWidgetState extends State<ListRecommendItemWidget> {
+  final List<ItemModel> _listItem = [
+    ItemModel(
+        imagePath: 'assets/images/recommend1.png',
+        nameProduct: 'White fashion hoodie',
+        price: '\$ 29.00'),
+    ItemModel(
+        imagePath: 'assets/images/recommend2.png',
+        nameProduct: 'Cotton T-shirt',
+        price: '\$ 30.00'),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 100,
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          final item = _listItem[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(right: 20),
+                  height: 100,
+                  width: 100,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.asset(
+                      item.imagePath,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.nameProduct,
+                      style: const TextStyle(
+                        color: Color(0xFF1D1F22),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      item.price,
+                      style: const TextStyle(
+                        color: Color(0xFF1D1F22),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          );
+        },
+        itemCount: _listItem.length,
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
       ),
     );
   }
@@ -83,9 +277,75 @@ class Banner2Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
-      color: Colors.amber,
-      child: TextField(),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF8F8FA),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      height: 200,
+      child: Stack(
+        children: [
+          Positioned(right: 0, child: _buildImage()),
+          const Positioned(
+            left: 20,
+            top: 50,
+            child: Column(
+              children: [
+                Text(
+                  'NEW COLLECTION',
+                  style: TextStyle(
+                    color: Color(0xFF777E90),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'HANG OUT \n& PARTY',
+                  style: TextStyle(
+                    color: Color(0xFF353945),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _buildImage() {
+    return SizedBox(
+      width: 200,
+      height: 200,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            child: SvgPicture.asset(
+              'assets/images/Ellipse1.svg',
+              height: 180,
+            ),
+          ),
+          Positioned(
+            child: SvgPicture.asset(
+              'assets/images/Ellipse2.svg',
+              height: 130,
+            ),
+          ),
+          Positioned(
+            child: Image.asset(
+              'assets/images/banner2.png',
+              filterQuality: FilterQuality.high,
+              fit: BoxFit.cover,
+              height: 200,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -234,12 +494,27 @@ class MainBannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Image.asset(
-        'assets/images/main_banner.jpeg',
-        fit: BoxFit.cover,
-      ),
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            'assets/images/main_banner.jpeg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const Positioned(
+            right: 20,
+            top: 30,
+            child: Text(
+              'Autumn\nCollection\n2021',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.w700,
+              ),
+            ))
+      ],
     );
   }
 }
