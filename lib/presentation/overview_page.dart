@@ -1,36 +1,21 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluxstore/model/intro_model.dart';
 import 'package:fluxstore/model/item_model.dart';
 
-class OverviewPage extends StatelessWidget {
+class OverviewPage extends StatefulWidget {
   const OverviewPage({super.key});
 
   @override
+  State<OverviewPage> createState() => _OverviewPageState();
+}
+
+class _OverviewPageState extends State<OverviewPage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Fluxstore',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset('assets/icons/icon_menu.svg'),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/icon_bell.svg'),
-            ),
-          ),
-        ],
-      ),
-      body: const SingleChildScrollView(
+    return const Scaffold(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -71,8 +56,8 @@ class OverviewPage extends StatelessWidget {
               Banner3Widget(
                 title: 'I Sale up to 40%',
                 description: 'FOR SLIM\n& BEAUTY',
-                height: 200,
-                imagePath: 'assets/images/banner3.png',
+                height: 180,
+                imagePath: 'assets/images/item_product_3.png',
               ),
               SizedBox(
                 height: 20,
@@ -80,12 +65,85 @@ class OverviewPage extends StatelessWidget {
               Banner3Widget(
                 title: 'Summer Collection 2023',
                 description: 'Most sexy\n& fabulous\ndesign',
-                height: 300,
-                imagePath: 'assets/images/image_69.png',
-              )
+                height: 200,
+                imagePath: 'assets/images/banner3_2.png',
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              BottomWidget(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class BottomWidget extends StatelessWidget {
+  const BottomWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<ItemModel> listItem = [
+      ItemModel(
+          imagePath: 'assets/images/bottom_image1.png',
+          nameProduct: 'T-Shirts',
+          price: 'The \nOffice\nLife'),
+      ItemModel(
+          imagePath: 'assets/images/bottom_image2.png',
+          nameProduct: 'Dresses',
+          price: 'Elegant\nDesign'),
+    ];
+    return SizedBox(
+      height: 250,
+      child: ListView.builder(
+        itemCount: listItem.length,
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          final item = listItem[index];
+          return Container(
+              margin: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF8F8FA),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    item.imagePath,
+                    filterQuality: FilterQuality.high,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        item.nameProduct,
+                        style: const TextStyle(
+                          color: Color(0xFF737680),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        item.price,
+                        style: const TextStyle(
+                          color: Color(0xFF1D1F22),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      )
+                    ],
+                  )
+                ],
+              ));
+        },
       ),
     );
   }
@@ -115,7 +173,7 @@ class Banner3Widget extends StatelessWidget {
           Positioned(right: 0, child: _buildImage()),
           Positioned(
             left: 20,
-            top: 50,
+            top: 30,
             child: Column(
               children: [
                 Text(
@@ -360,17 +418,18 @@ class ListFeatureProductWidget extends StatefulWidget {
 class _ListFeatureProductWidgetState extends State<ListFeatureProductWidget> {
   final List<ItemModel> _listItem = [
     ItemModel(
-        imagePath: 'assets/images/item_product_1.jpeg',
+        imagePath: 'assets/images/bottom_image1.png',
         nameProduct: 'Turtleneck Sweater',
         price: '\$ 39.99'),
     ItemModel(
-        imagePath: 'assets/images/item_product_2.png',
+        imagePath: 'assets/images/bottom_image2.png',
         nameProduct: 'Long Sleeve Dress',
         price: '\$ 45.00'),
     ItemModel(
-        imagePath: 'assets/images/item_product_3.png',
-        nameProduct: 'Sportwear Set',
-        price: '\$ 80.00'),
+      imagePath: 'assets/images/item_product_3.png',
+      nameProduct: 'Sportwear Set',
+      price: '\$ 80.00',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -489,9 +548,67 @@ class CategoriesWidget extends StatelessWidget {
   }
 }
 
-class MainBannerWidget extends StatelessWidget {
+class MainBannerWidget extends StatefulWidget {
   const MainBannerWidget({super.key});
 
+  @override
+  State<MainBannerWidget> createState() => _MainBannerWidgetState();
+}
+
+class _MainBannerWidgetState extends State<MainBannerWidget> {
+  final List<IntroModel> _listIntro = [
+    IntroModel(
+      imagePath: 'assets/images/main_banner.jpeg',
+      title: 'Autumn\nCollection\n2023',
+      description: '',
+    ),
+    IntroModel(
+      imagePath: 'assets/images/item_product_1.jpeg',
+      title: 'Autumn\nCollection\n2023',
+      description: '',
+    ),
+    IntroModel(
+      imagePath: 'assets/images/item_product_2.png',
+      title: 'Autumn\nCollection\n2023',
+      description: '',
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider.builder(
+      options: CarouselOptions(
+        enableInfiniteScroll: true,
+        scrollDirection: Axis.horizontal,
+        enlargeCenterPage: true,
+        autoPlay: true,
+        enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+        onPageChanged: (index, reason) {
+          setState(() {});
+        },
+      ),
+      itemCount: _listIntro.length,
+      itemBuilder: (BuildContext context, int index, int realIndex) {
+        final item = _listIntro[index];
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Banner(
+            imagePath: item.imagePath,
+            title: item.title,
+          ),
+        );
+      },
+    );
+  }
+}
+
+class Banner extends StatelessWidget {
+  const Banner({
+    super.key,
+    required this.imagePath,
+    required this.title,
+  });
+  final String imagePath;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -499,16 +616,16 @@ class MainBannerWidget extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Image.asset(
-            'assets/images/main_banner.jpeg',
+            imagePath,
             fit: BoxFit.cover,
           ),
         ),
-        const Positioned(
+        Positioned(
             right: 20,
             top: 30,
             child: Text(
-              'Autumn\nCollection\n2021',
-              style: TextStyle(
+              title,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,

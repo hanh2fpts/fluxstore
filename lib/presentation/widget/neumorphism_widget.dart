@@ -1,33 +1,26 @@
 import 'package:flutter/material.dart';
 
-class NeumorphismWidget extends StatefulWidget {
+class NeumorphismWidget extends StatelessWidget {
   const NeumorphismWidget({super.key, required this.widget});
   final Widget widget;
   @override
-  State<NeumorphismWidget> createState() => _NeumorphismWidgetState();
-}
-
-class _NeumorphismWidgetState extends State<NeumorphismWidget> {
-  @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(
-        milliseconds: 200,
-      ),
+    return Container(
+      padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
-          color: Colors.grey[300],
-          borderRadius: BorderRadius.circular(50),
+          color: const Color(0xFFFAFAFA),
+          borderRadius: BorderRadius.circular(20),
           boxShadow: const [
             BoxShadow(
-              color: Colors.grey,
-              offset: Offset(4, 4),
-              blurRadius: 15,
+              color: Color(0x26000000),
+              offset: Offset(1, 0),
+              blurRadius: 1,
               spreadRadius: 1,
             ),
             BoxShadow(
-              color: Colors.white,
-              offset: Offset(-4, -4),
-              blurRadius: 15,
+              color: Color(0xFFFAFAFA),
+              offset: Offset(1, 0),
+              blurRadius: 1,
               spreadRadius: 1,
             ),
           ]),
