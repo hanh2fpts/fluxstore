@@ -1,14 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluxstore/app_config/app_config.dart';
+import 'package:fluxstore/presentation/sidebar/about_page.dart';
+import 'package:fluxstore/presentation/home/home_page.dart';
+import 'package:fluxstore/presentation/setting/setting_page.dart';
+import 'package:fluxstore/presentation/sidebar/support_page.dart';
 
-class MenuPage extends StatelessWidget {
+class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
-  static const String routeName = 'menu_page';
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> with AutomaticKeepAliveClientMixin<MenuPage> {
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return NavigationDrawer(
-      onDestinationSelected: (value) {},
-      selectedIndex: 0,
+      onDestinationSelected: (value) {
+        switch (value) {
+          case 0:
+            AppConfig.currentIndex = 0;
+            Navigator.of(context).pushReplacementNamed(HomePage.routeName);
+          case 1:
+            AppConfig.currentIndex = 1;
+            Navigator.of(context).pushReplacementNamed(HomePage.routeName);
+          case 2:
+            AppConfig.currentIndex = 2;
+            Navigator.of(context).pushReplacementNamed(HomePage.routeName);
+          case 3:
+            AppConfig.currentIndex = 3;
+            Navigator.of(context).pushReplacementNamed(HomePage.routeName);
+          case 4:
+            AppConfig.currentIndex = 4;
+            Navigator.of(context).pushReplacementNamed(SettingPage.routeName);
+          case 5:
+            AppConfig.currentIndex = 5;
+            Navigator.of(context).pushReplacementNamed(SupportPage.routeName);
+          case 6:
+            AppConfig.currentIndex = 6;
+            Navigator.of(context).pushReplacementNamed(AboutPage.routeName);
+        }
+      },
+      selectedIndex: AppConfig.currentIndex,
       children: [
         const SizedBox(
           height: 100,
@@ -100,7 +136,7 @@ class MenuPage extends StatelessWidget {
         NavigationDrawerDestination(
           icon: SvgPicture.asset('assets/icons/Setting_line.svg'),
           label: const Text(
-            'My Profile',
+            'Setting',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -110,7 +146,7 @@ class MenuPage extends StatelessWidget {
         NavigationDrawerDestination(
           icon: SvgPicture.asset('assets/icons/Message_light.svg'),
           label: const Text(
-            'My Profile',
+            'Support',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -120,7 +156,7 @@ class MenuPage extends StatelessWidget {
         NavigationDrawerDestination(
           icon: SvgPicture.asset('assets/icons/Line.svg'),
           label: const Text(
-            'My Profile',
+            'About us',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,

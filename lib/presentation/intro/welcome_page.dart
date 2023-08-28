@@ -14,7 +14,7 @@ class WelcomePage extends StatelessWidget {
         Positioned.fill(
             child: Image.asset(
           'assets/images/image_welcome.png',
-          fit: BoxFit.contain,
+          fit: BoxFit.cover,
         )),
         Positioned.fill(
           child: Container(
