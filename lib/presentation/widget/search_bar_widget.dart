@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/presentation/discover/search_page.dart';
-import 'package:fluxstore/presentation/menu_page.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key});
@@ -20,13 +19,11 @@ class SearchBarWidget extends StatelessWidget {
             label: const Text(
               'Search',
               style: TextStyle(
-                color: Color(0xFF777E90),
                 fontSize: 16,
               ),
             ),
             icon: const Icon(
               Icons.search,
-              color: Color(0xFF777E90),
             ),
             onPressed: () => Navigator.of(context).pushNamed(SearchPage.routeName),
           ),
@@ -42,7 +39,7 @@ class SearchBarWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15), // Set your desired radius
                   ),
                 )),
-            onPressed: () => Navigator.of(context).pushNamed(MenuPage.routeName),
+            onPressed: () {},
             child: SvgPicture.asset('assets/icons/icon_filter.svg'),
           ),
         )

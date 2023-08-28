@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fluxstore/presentation/menu_page.dart';
-import 'package:fluxstore/presentation/notification_page.dart';
+import 'package:fluxstore/presentation/menu/menu_page.dart';
+import 'package:fluxstore/presentation/setting/setting_color.dart';
 
-import 'setting/setting_noti_page.dart';
+import 'setting_noti_page.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -24,7 +24,7 @@ class SettingPage extends StatelessWidget {
           ),
           leading: IconButton(
             onPressed: () => scaffoldKey.currentState?.openDrawer(),
-            icon: SvgPicture.asset('assets/icons/icon_menu.svg'),
+            icon: const Icon(Icons.menu),
           ),
         ),
         body: Padding(
@@ -61,7 +61,7 @@ class SettingPage extends StatelessWidget {
               SettingItemWidget(
                 title: 'Color Theme',
                 imagePath: 'assets/icons/moon.svg',
-                selectFunction: () {},
+                selectFunction: () => Navigator.of(context).pushNamed(SettingColor.routeName),
               ),
             ],
           ),
@@ -88,7 +88,6 @@ class SettingItemWidget extends StatelessWidget {
           title: Text(
             title,
             style: const TextStyle(
-              color: Color(0xFF33302E),
               fontSize: 16,
             ),
           ),

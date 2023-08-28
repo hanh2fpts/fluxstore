@@ -123,7 +123,7 @@ class BottomWidget extends StatelessWidget {
                       Text(
                         item.nameProduct,
                         style: const TextStyle(
-                          color: Color(0xFF737680),
+                          color: Colors.black,
                           fontSize: 13,
                           fontWeight: FontWeight.w400,
                         ),
@@ -131,7 +131,7 @@ class BottomWidget extends StatelessWidget {
                       Text(
                         item.price,
                         style: const TextStyle(
-                          color: Color(0xFF1D1F22),
+                          color: Colors.black,
                           fontSize: 17,
                           fontWeight: FontWeight.w400,
                         ),
@@ -179,7 +179,7 @@ class Banner3Widget extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    color: Color(0xFF777E90),
+                    color: Colors.black,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
@@ -190,7 +190,7 @@ class Banner3Widget extends StatelessWidget {
                 Text(
                   description,
                   style: const TextStyle(
-                    color: Color(0xFF353945),
+                    color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                   ),
@@ -246,7 +246,7 @@ class TitleWidget extends StatelessWidget {
         ),
         const Text(
           'Show all',
-          style: TextStyle(color: Color(0xFF9B9B9B), fontSize: 13, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400),
         )
       ],
     );
@@ -302,7 +302,6 @@ class _ListRecommendItemWidgetState extends State<ListRecommendItemWidget> {
                     Text(
                       item.nameProduct,
                       style: const TextStyle(
-                        color: Color(0xFF1D1F22),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
@@ -310,7 +309,6 @@ class _ListRecommendItemWidgetState extends State<ListRecommendItemWidget> {
                     Text(
                       item.price,
                       style: const TextStyle(
-                        color: Color(0xFF1D1F22),
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
@@ -351,7 +349,7 @@ class Banner2Widget extends StatelessWidget {
                 Text(
                   'NEW COLLECTION',
                   style: TextStyle(
-                    color: Color(0xFF777E90),
+                    color: Colors.black,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
@@ -362,7 +360,7 @@ class Banner2Widget extends StatelessWidget {
                 Text(
                   'HANG OUT \n& PARTY',
                   style: TextStyle(
-                    color: Color(0xFF353945),
+                    color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                   ),
@@ -467,7 +465,6 @@ class _ListFeatureProductWidgetState extends State<ListFeatureProductWidget> {
                 Text(
                   _listItem[index].nameProduct,
                   style: const TextStyle(
-                    color: Color(0xFF1D1F22),
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                   ),
@@ -475,7 +472,6 @@ class _ListFeatureProductWidgetState extends State<ListFeatureProductWidget> {
                 Text(
                   _listItem[index].price,
                   style: const TextStyle(
-                    color: Color(0xFF1D1F22),
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                   ),
@@ -509,7 +505,6 @@ class CategoriesWidget extends StatelessWidget {
                 Container(
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    //border: Border.all(color: Colors.black),
                     color: Color(0xFFF3F3F3),
                   ),
                   child: Padding(

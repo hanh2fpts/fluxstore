@@ -95,7 +95,6 @@ class DetailsItemWidget extends StatelessWidget {
                 Text(
                   item.title,
                   style: const TextStyle(
-                    color: Colors.black,
                     fontSize: 16,
                   ),
                 ),
@@ -103,7 +102,6 @@ class DetailsItemWidget extends StatelessWidget {
                 Text(
                   item.amountItem,
                   style: const TextStyle(
-                    color: Color(0xFFA3A5AD),
                     fontSize: 12,
                   ),
                 ),

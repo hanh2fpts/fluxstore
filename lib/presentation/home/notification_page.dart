@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/notification_model.dart';
+import '../../model/notification_model.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -41,14 +41,12 @@ class NotificationPage extends StatelessWidget {
                       Text(
                         item.title,
                         style: const TextStyle(
-                          color: Color(0xFF222222),
                           fontSize: 14,
                         ),
                       ),
                       Text(
                         item.description,
                         style: const TextStyle(
-                          color: Color(0xFF686868),
                           fontSize: 13,
                         ),
                       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/app_config/app_config.dart';
 import 'package:fluxstore/presentation/sidebar/about_page.dart';
 import 'package:fluxstore/presentation/home/home_page.dart';
@@ -45,8 +44,8 @@ class _MenuPageState extends State<MenuPage> with AutomaticKeepAliveClientMixin<
         }
       },
       selectedIndex: AppConfig.currentIndex,
-      children: [
-        const SizedBox(
+      children: const [
+        SizedBox(
           height: 100,
           child: Row(
             children: [
@@ -65,7 +64,6 @@ class _MenuPageState extends State<MenuPage> with AutomaticKeepAliveClientMixin<
                   Text(
                     'Sunie Pham',
                     style: TextStyle(
-                      color: Colors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),
@@ -73,7 +71,6 @@ class _MenuPageState extends State<MenuPage> with AutomaticKeepAliveClientMixin<
                   Text(
                     'sunieux@gmail.com',
                     style: TextStyle(
-                      color: Colors.black,
                       fontSize: 12,
                     ),
                   )
@@ -84,81 +81,73 @@ class _MenuPageState extends State<MenuPage> with AutomaticKeepAliveClientMixin<
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/icon_home_select.svg'),
-          label: const Text(
+          icon: Icon(Icons.home_filled),
+          label: Text(
             'Homepage',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/search.svg'),
-          label: const Text(
+          icon: Icon(Icons.search),
+          label: Text(
             'Discover',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/shop_cart.svg'),
-          label: const Text(
+          icon: Icon(Icons.badge),
+          label: Text(
             'My Order',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/User_fill.svg'),
-          label: const Text(
+          icon: Icon(Icons.person),
+          label: Text(
             'My Profile',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           child: Text(
             'OTHER',
             style: TextStyle(
-              color: Color(0xFF777E90),
               fontSize: 14,
             ),
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/Setting_line.svg'),
-          label: const Text(
+          icon: Icon(Icons.settings),
+          label: Text(
             'Setting',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/Message_light.svg'),
-          label: const Text(
+          icon: Icon(Icons.email_outlined),
+          label: Text(
             'Support',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),
         ),
         NavigationDrawerDestination(
-          icon: SvgPicture.asset('assets/icons/Line.svg'),
-          label: const Text(
+          icon: Icon(Icons.info_outline),
+          label: Text(
             'About us',
             style: TextStyle(
-              color: Colors.black,
               fontSize: 16,
             ),
           ),

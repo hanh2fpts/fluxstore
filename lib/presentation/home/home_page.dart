@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/app_config/app_config.dart';
 import 'package:fluxstore/presentation/discover/discover_page.dart';
-import 'package:fluxstore/presentation/menu_page.dart';
-import 'package:fluxstore/presentation/notification_page.dart';
-import 'package:fluxstore/presentation/order_page.dart';
-import 'package:fluxstore/presentation/overview_page.dart';
-import 'package:fluxstore/presentation/profile_page.dart';
+import 'package:fluxstore/presentation/menu/menu_page.dart';
+import 'package:fluxstore/presentation/home/notification_page.dart';
+import 'package:fluxstore/presentation/order/order_page.dart';
+import 'package:fluxstore/presentation/overview/overview_page.dart';
+import 'package:fluxstore/presentation/profile/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -55,14 +54,13 @@ class _HomePageState extends State<HomePage> {
           ),
           leading: IconButton(
             onPressed: () => scaffoldKey.currentState?.openDrawer(),
-            icon: SvgPicture.asset('assets/icons/icon_menu.svg'),
-          ),
+            icon: const Icon(Icons.menu)),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 15),
               child: IconButton(
                 onPressed: () => Navigator.of(context).pushNamed(NotificationPage.routeName),
-                icon: SvgPicture.asset('assets/icons/icon_bell.svg'),
+                icon: const Icon(Icons.notifications_active),
               ),
             ),
           ],
@@ -72,10 +70,6 @@ class _HomePageState extends State<HomePage> {
           children: pages,
         ),
         bottomNavigationBar: NavigationBar(
-          surfaceTintColor: Colors.white,
-          shadowColor: Colors.white,
-          indicatorColor: Colors.white,
-          backgroundColor: Colors.white,
           animationDuration: const Duration(milliseconds: 0),
           onDestinationSelected: (value) {
             setState(() {
@@ -83,30 +77,30 @@ class _HomePageState extends State<HomePage> {
             });
           },
           selectedIndex: AppConfig.currentIndex,
-          destinations: [
+          destinations: const [
             NavigationDestination(
-              icon: SvgPicture.asset('assets/icons/icon_home.svg'),
+              icon: Icon(Icons.home_outlined),
               label: '',
               tooltip: 'Home',
-              selectedIcon: SvgPicture.asset('assets/icons/icon_home_select.svg'),
+              selectedIcon: Icon(Icons.home),
             ),
             NavigationDestination(
-              icon: SvgPicture.asset('assets/icons/icon_search.svg'),
+              icon: Icon(Icons.search_outlined),
               label: '',
               tooltip: 'Search',
-              selectedIcon: SvgPicture.asset('assets/icons/icon_search_select.svg'),
+              selectedIcon: Icon(Icons.search),
             ),
             NavigationDestination(
-              icon: SvgPicture.asset('assets/icons/icon_order.svg'),
+              icon: Icon(Icons.badge_outlined),
               label: '',
               tooltip: 'Order',
-              selectedIcon: SvgPicture.asset('assets/icons/icon_order_select.svg'),
+              selectedIcon: Icon(Icons.badge),
             ),
             NavigationDestination(
-              icon: SvgPicture.asset('assets/icons/icon_profile.svg'),
+              icon: Icon(Icons.person_outline),
               label: '',
               tooltip: 'Profile',
-              selectedIcon: SvgPicture.asset('assets/icons/icon_profile_select.svg'),
+              selectedIcon: Icon(Icons.person),
             ),
           ],
         ));

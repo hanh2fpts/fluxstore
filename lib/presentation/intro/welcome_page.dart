@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluxstore/presentation/intro_page.dart';
+import 'package:fluxstore/presentation/intro/intro_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});

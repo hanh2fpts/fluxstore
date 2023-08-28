@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluxstore/model/intro_model.dart';
-import 'package:fluxstore/presentation/home_page.dart';
+import 'package:fluxstore/presentation/home/home_page.dart';
 import 'package:fluxstore/presentation/widget/intro_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

@@ -1,10 +1,10 @@
-import 'package:fluxstore/cubit/home_cubit.dart';
+import 'package:fluxstore/bloc/theme/theme_bloc.dart';
 import 'package:fluxstore/injection/injection.dart';
 
 class BlocModule {
   BlocModule._();
   static void init() {
     final injection = Injection.instance;
-    injection.registerLazySingleton<HomeCubit>(() => HomeCubit());
+    injection.registerLazySingleton<ThemeBloc>(() => ThemeBloc());
   }
 }

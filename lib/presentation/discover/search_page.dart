@@ -25,12 +25,10 @@ class SearchPage extends StatelessWidget {
                         padding: EdgeInsets.only(left: 10),
                         child: Icon(
                           Icons.search,
-                          color: Color(0xFF777E90),
                         ),
                       ),
                       hintText: 'Search',
                       hintStyle: MaterialStateProperty.all(const TextStyle(
-                        color: Color(0xFF777E90),
                         fontSize: 16,
                       )),
                     ),
