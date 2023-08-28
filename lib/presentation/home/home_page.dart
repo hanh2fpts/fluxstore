@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
       case 2:
         return 'Order';
       case 3:
-        return '';
+        return 'Profile';
       default:
         return '';
     }
@@ -53,8 +53,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           leading: IconButton(
-            onPressed: () => scaffoldKey.currentState?.openDrawer(),
-            icon: const Icon(Icons.menu)),
+              onPressed: () => scaffoldKey.currentState?.openDrawer(),
+              icon: const Icon(Icons.menu)),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 15),
@@ -91,10 +91,10 @@ class _HomePageState extends State<HomePage> {
               selectedIcon: Icon(Icons.search),
             ),
             NavigationDestination(
-              icon: Icon(Icons.badge_outlined),
+              icon: Icon(Icons.shopping_bag_outlined),
               label: '',
               tooltip: 'Order',
-              selectedIcon: Icon(Icons.badge),
+              selectedIcon: Icon(Icons.shopping_bag),
             ),
             NavigationDestination(
               icon: Icon(Icons.person_outline),

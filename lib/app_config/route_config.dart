@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
 import 'package:fluxstore/presentation/setting/setting_color.dart';
 import 'package:fluxstore/presentation/sidebar/about_page.dart';
 import 'package:fluxstore/presentation/intro/intro_page.dart';
@@ -30,6 +31,8 @@ Route generateRoutes(RouteSettings settings) {
       return CupertinoPageRoute(builder: (context) => const SettingNotificationPage());
     case SettingColor.routeName:
       return CupertinoPageRoute(builder: (context) => const SettingColor());
+    case ProfileSettingPage.routeName:
+      return CupertinoPageRoute(builder: (context) => const ProfileSettingPage());
     default:
       return CupertinoPageRoute(builder: (context) => const HomePage());
   }
