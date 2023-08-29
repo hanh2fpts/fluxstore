@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/model/intro_model.dart';
 import 'package:fluxstore/model/item_model.dart';
+import 'package:reorderables/reorderables.dart';
 
 class OverviewPage extends StatefulWidget {
   const OverviewPage({super.key});
@@ -485,37 +486,60 @@ class _ListFeatureProductWidgetState extends State<ListFeatureProductWidget> {
   }
 }
 
-class CategoriesWidget extends StatelessWidget {
+class CategoriesWidget extends StatefulWidget {
   const CategoriesWidget({super.key});
 
   @override
+  State<CategoriesWidget> createState() => _CategoriesWidgetState();
+}
+
+class _CategoriesWidgetState extends State<CategoriesWidget> {
+  late List<Widget> _listCategories;
+  @override
+  void initState() {
+    super.initState();
+    _listCategories = [
+      buildCategories('assets/icons/categories_women.svg', 'Women', true),
+      buildCategories('assets/icons/categories_men.svg', 'Men', false),
+      buildCategories('assets/icons/categories_accessories.svg', 'Accessories', false),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color(0xFFF3F3F3),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(5),
+              child: SvgPicture.asset('assets/icons/categories_beauty.svg'),
+            ),
+          ),
+          const Text('Beauty')
+        ],
+      ),
+    ];
+  }
+
+  @override
   Widget build(BuildContext context) {
+    void onReorder(int oldIndex, int newIndex) {
+      setState(() {
+        Widget row = _listCategories.removeAt(oldIndex);
+        _listCategories.insert(newIndex, row);
+      });
+    }
+
     return SizedBox(
       height: 100,
       child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            buildCategories('assets/icons/categories_women.svg', 'Women', true),
-            buildCategories('assets/icons/categories_men.svg', 'Men', false),
-            buildCategories('assets/icons/categories_accessories.svg', 'Accessories', false),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFFF3F3F3),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: SvgPicture.asset('assets/icons/categories_beauty.svg'),
-                  ),
-                ),
-                const Text('Beauty')
-              ],
-            ),
-          ],
+        child: ReorderableWrap(
+          spacing: 30,
+          runSpacing: 20,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          alignment: WrapAlignment.spaceBetween,
+          onReorder: onReorder,
+          children: _listCategories,
         ),
       ),
     );
