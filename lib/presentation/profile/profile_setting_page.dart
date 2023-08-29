@@ -32,8 +32,9 @@ class ProfileSettingPage extends StatelessWidget {
                   right: 0,
                   child: Container(
                     padding: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
+                      color: Theme.of(context).colorScheme.background,
                     ),
                     child: const Icon(Icons.camera_alt_outlined),
                   ),

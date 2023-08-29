@@ -40,7 +40,10 @@ class SearchBarWidget extends StatelessWidget {
                   ),
                 )),
             onPressed: () {},
-            child: SvgPicture.asset('assets/icons/icon_filter.svg'),
+            child: IconButton(
+              icon: const Icon(Icons.sort),
+              onPressed: () {},
+            ),
           ),
         )
       ],
