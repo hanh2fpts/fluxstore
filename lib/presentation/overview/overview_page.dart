@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reorderables/reorderables.dart';
 import 'package:fluxstore/model/intro_model.dart';
 import 'package:fluxstore/model/item_model.dart';
-import 'package:reorderables/reorderables.dart';
 
 class OverviewPage extends StatefulWidget {
   const OverviewPage({super.key});

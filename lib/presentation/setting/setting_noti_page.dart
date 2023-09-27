@@ -10,9 +10,9 @@ class SettingNotificationPage extends StatefulWidget {
 }
 
 class _SettingNotificationPageState extends State<SettingNotificationPage> {
-  bool enableNoti = true;
-  bool enableNotiSound = true;
-  bool enableLockScreenNoti = false;
+  bool enableNotification = true;
+  bool enableNotificationSound = true;
+  bool enableLockScreenNotification = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,10 +41,10 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
               ),
             ),
             trailing: CupertinoSwitch(
-                value: enableNoti,
+                value: enableNotification,
                 onChanged: (value) {
                   setState(() {
-                    enableNoti = value;
+                    enableNotification = value;
                   });
                 }),
           ),
@@ -62,10 +62,10 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
               ),
             ),
             trailing: CupertinoSwitch(
-                value: enableNotiSound,
+                value: enableNotificationSound,
                 onChanged: (value) {
                   setState(() {
-                    enableNotiSound = value;
+                    enableNotificationSound = value;
                   });
                 }),
           ),
@@ -82,9 +82,9 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
                 fontSize: 12,
               ),
             ),
-            trailing: CupertinoSwitch(value: enableLockScreenNoti, onChanged: (value) {
+            trailing: CupertinoSwitch(value: enableLockScreenNotification, onChanged: (value) {
               setState(() {
-                enableLockScreenNoti = value;
+                enableLockScreenNotification = value;
               });
             }),
           ),

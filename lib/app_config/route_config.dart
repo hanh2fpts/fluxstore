@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:fluxstore/presentation/account/forgot_password_page.dart';
+import 'package:fluxstore/presentation/account/log_in_page.dart';
+import 'package:fluxstore/presentation/account/sign_up_page.dart';
 import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
 import 'package:fluxstore/presentation/setting/setting_color.dart';
 import 'package:fluxstore/presentation/sidebar/about_page.dart';
@@ -33,6 +36,12 @@ Route generateRoutes(RouteSettings settings) {
       return CupertinoPageRoute(builder: (context) => const SettingColor());
     case ProfileSettingPage.routeName:
       return CupertinoPageRoute(builder: (context) => const ProfileSettingPage());
+    case SignUpPage.routeName:
+      return CupertinoPageRoute(builder: (context) => const SignUpPage());
+    case LoginPage.routeName:
+      return CupertinoPageRoute(builder: (context) => const LoginPage());
+    case ForgotPasswordPage.routeName:
+      return CupertinoPageRoute(builder: (context) => const ForgotPasswordPage());
     default:
       return CupertinoPageRoute(builder: (context) => const HomePage());
   }

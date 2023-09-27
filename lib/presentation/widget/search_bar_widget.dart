@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/presentation/discover/search_page.dart';
 
 class SearchBarWidget extends StatelessWidget {
