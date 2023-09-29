@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fluxstore/app_config/app_config.dart';
 import 'package:fluxstore/injection/injection.dart';
@@ -10,6 +11,7 @@ Future<void> main() async {
   AppConfig.isFirstLogin = await checkFirstLogin();
   Injection.init();
   await Injection.instance.allReady();
+  SystemChannels.textInput.invokeMethod('TextInput.hide');
   runApp(const MyApp());
 }
 

@@ -23,7 +23,7 @@ class _SupportPageState extends State<SupportPage> {
     }
   }
 
-  void _launchMessenger() async {
+  Future<void> _launchMessenger() async {
     const url = 'http://m.me/hunghakma';
     if (await canLaunchUrl(Uri.parse(url))) {
       await launchUrl(Uri.parse(url));

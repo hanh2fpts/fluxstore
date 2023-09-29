@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluxstore/presentation/account/sign_up_page.dart';
+import 'package:fluxstore/presentation/account/log_in_page.dart';
 import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -91,7 +91,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   const Divider(),
                   ListTile(
-                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(SignUpPage.routeName, (route) => false),
+                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(LoginPage.routeName, (route) => false),
                     title: const Text('Log out'),
                     trailing: const Icon(Icons.arrow_forward_ios),
                     leading: const Icon(Icons.logout),
