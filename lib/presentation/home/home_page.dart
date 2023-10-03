@@ -53,8 +53,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           leading: IconButton(
-              onPressed: () => scaffoldKey.currentState?.openDrawer(),
-              icon: const Icon(Icons.menu)),
+            onPressed: () => scaffoldKey.currentState?.openDrawer(),
+            icon: const Icon(Icons.menu),
+          ),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 15),
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
           children: pages,
         ),
         bottomNavigationBar: NavigationBar(
-          animationDuration: const Duration(milliseconds: 0),
+          animationDuration: const Duration(milliseconds: 5),
           onDestinationSelected: (value) {
             setState(() {
               AppConfig.currentIndex = value;

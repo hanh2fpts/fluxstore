@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/presentation/account/forgot_password_page.dart';
+import 'package:fluxstore/presentation/account/sign_up_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -162,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50,
                         ),
                         GestureDetector(
-                          onTap: () => Navigator.of(context).pop(),
+                          onTap: () => Navigator.of(context).pushNamed(SignUpPage.routeName),
                           child: RichText(
                             text: TextSpan(
                               text: 'Don’t have an account? ',

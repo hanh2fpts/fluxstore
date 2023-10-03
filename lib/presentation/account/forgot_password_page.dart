@@ -76,15 +76,16 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 Align(
                   alignment: Alignment.center,
                   child: ElevatedButton(
-                      onPressed: () {
-                        if (_keyForm.currentState!.validate()) {
-                          Navigator.of(context).pushNamed(VerificationCodePage.routeName);
-                        }
-                      },
-                      child: const Text(
-                        'SEND PIN CODE',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      )),
+                    onPressed: () {
+                      if (_keyForm.currentState!.validate()) {
+                        Navigator.of(context).pushNamed(VerificationCodePage.routeName);
+                      }
+                    },
+                    child: const Text(
+                      'SEND PIN CODE',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -9,58 +9,56 @@ class DiscoverPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: SearchBarWidget(),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  CustomExpansionPanel(
-                    header: AdvertisementWidget(
-                      backgroundColor: Color(0xFFA3A798),
-                      imagePath: 'assets/images/discover_banner4.png',
-                      title: 'CLOTHING',
-                    ),
-                    body: DetailsItemWidget(),
+    return const Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: SearchBarWidget(),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                CustomExpansionPanel(
+                  header: AdvertisementWidget(
+                    backgroundColor: Color(0xFFA3A798),
+                    imagePath: 'assets/images/discover_banner4.png',
+                    title: 'CLOTHING',
                   ),
-                  CustomExpansionPanel(
-                    header: AdvertisementWidget(
-                      backgroundColor: Color(0xFF898280),
-                      imagePath: 'assets/images/discover_banner4.png',
-                      title: 'ACCESSORIES',
-                    ),
-                    body: DetailsItemWidget(),
+                  body: DetailsItemWidget(),
+                ),
+                CustomExpansionPanel(
+                  header: AdvertisementWidget(
+                    backgroundColor: Color(0xFF898280),
+                    imagePath: 'assets/images/discover_banner4.png',
+                    title: 'ACCESSORIES',
                   ),
-                  CustomExpansionPanel(
-                    header: AdvertisementWidget(
-                      backgroundColor: Color(0xFF44565C),
-                      imagePath: 'assets/images/discover_banner4.png',
-                      title: 'SHOES',
-                    ),
-                    body: DetailsItemWidget(),
+                  body: DetailsItemWidget(),
+                ),
+                CustomExpansionPanel(
+                  header: AdvertisementWidget(
+                    backgroundColor: Color(0xFF44565C),
+                    imagePath: 'assets/images/discover_banner4.png',
+                    title: 'SHOES',
                   ),
-                  CustomExpansionPanel(
-                    header: AdvertisementWidget(
-                      backgroundColor: Color(0xFFB9AEB2),
-                      imagePath: 'assets/images/discover_banner4.png',
-                      title: 'COLLECTION',
-                    ),
-                    body: DetailsItemWidget(),
+                  body: DetailsItemWidget(),
+                ),
+                CustomExpansionPanel(
+                  header: AdvertisementWidget(
+                    backgroundColor: Color(0xFFB9AEB2),
+                    imagePath: 'assets/images/discover_banner4.png',
+                    title: 'COLLECTION',
                   ),
-                ],
-              ),
+                  body: DetailsItemWidget(),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -15,66 +15,64 @@ class OverviewPage extends StatefulWidget {
 class _OverviewPageState extends State<OverviewPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //category
-              CategoriesWidget(),
-              //main banner
-              MainBannerWidget(),
-              //feature product
-              SizedBox(
-                height: 20,
-              ),
-              TitleWidget(title: 'Feature Products'),
-              SizedBox(
-                height: 20,
-              ),
-              ListFeatureProductWidget(),
-              //banner 2
-              Banner2Widget(),
-              //recommend
-              SizedBox(
-                height: 20,
-              ),
-              TitleWidget(title: 'Recommended'),
-              SizedBox(
-                height: 20,
-              ),
-              ListRecommendItemWidget(),
-              //top collection
-              SizedBox(
-                height: 20,
-              ),
-              TitleWidget(title: 'Top Collection'),
-              SizedBox(
-                height: 20,
-              ),
-              Banner3Widget(
-                title: 'I Sale up to 40%',
-                description: 'FOR SLIM\n& BEAUTY',
-                height: 180,
-                imagePath: 'assets/images/item_product_3.png',
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Banner3Widget(
-                title: 'Summer Collection 2023',
-                description: 'Most sexy\n& fabulous\ndesign',
-                height: 200,
-                imagePath: 'assets/images/banner3_2.png',
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              BottomWidget(),
-            ],
-          ),
+    return const SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //category
+            CategoriesWidget(),
+            //main banner
+            MainBannerWidget(),
+            //feature product
+            SizedBox(
+              height: 20,
+            ),
+            TitleWidget(title: 'Feature Products'),
+            SizedBox(
+              height: 20,
+            ),
+            ListFeatureProductWidget(),
+            //banner 2
+            Banner2Widget(),
+            //recommend
+            SizedBox(
+              height: 20,
+            ),
+            TitleWidget(title: 'Recommended'),
+            SizedBox(
+              height: 20,
+            ),
+            ListRecommendItemWidget(),
+            //top collection
+            SizedBox(
+              height: 20,
+            ),
+            TitleWidget(title: 'Top Collection'),
+            SizedBox(
+              height: 20,
+            ),
+            Banner3Widget(
+              title: 'I Sale up to 40%',
+              description: 'FOR SLIM\n& BEAUTY',
+              height: 180,
+              imagePath: 'assets/images/item_product_3.png',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Banner3Widget(
+              title: 'Summer Collection 2023',
+              description: 'Most sexy\n& fabulous\ndesign',
+              height: 200,
+              imagePath: 'assets/images/banner3_2.png',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            BottomWidget(),
+          ],
         ),
       ),
     );

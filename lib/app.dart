@@ -17,17 +17,18 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
           return MaterialApp(
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(
-                  seedColor: Color(state.mainColor),
-                  brightness: state.isDarkTheme ? Brightness.dark : Brightness.light,
-                ),
-                fontFamily: 'ProductSans',
-                useMaterial3: true,
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: Color(state.mainColor),
+                brightness: state.isDarkTheme ? Brightness.dark : Brightness.light,
               ),
-              initialRoute: '/',
-              onGenerateRoute: (settings) => generateRoutes(settings),
-              home: AppConfig.isFirstLogin ? const WelcomePage() : const HomePage());
+              fontFamily: 'ProductSans',
+              useMaterial3: true,
+            ),
+            initialRoute: '/',
+            onGenerateRoute: (settings) => generateRoutes(settings),
+            home: AppConfig.isFirstLogin ? const WelcomePage() : const HomePage(),
+          );
         },
       ),
     );

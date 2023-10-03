@@ -19,27 +19,21 @@ class _MenuPageState extends State<MenuPage> with AutomaticKeepAliveClientMixin<
     super.build(context);
     return NavigationDrawer(
       onDestinationSelected: (value) {
+        AppConfig.currentIndex = value;
         switch (value) {
           case 0:
-            AppConfig.currentIndex = 0;
             Navigator.of(context).pushReplacementNamed(HomePage.routeName);
           case 1:
-            AppConfig.currentIndex = 1;
             Navigator.of(context).pushReplacementNamed(HomePage.routeName);
           case 2:
-            AppConfig.currentIndex = 2;
             Navigator.of(context).pushReplacementNamed(HomePage.routeName);
           case 3:
-            AppConfig.currentIndex = 3;
             Navigator.of(context).pushReplacementNamed(HomePage.routeName);
           case 4:
-            AppConfig.currentIndex = 4;
             Navigator.of(context).pushReplacementNamed(SettingPage.routeName);
           case 5:
-            AppConfig.currentIndex = 5;
             Navigator.of(context).pushReplacementNamed(SupportPage.routeName);
           case 6:
-            AppConfig.currentIndex = 6;
             Navigator.of(context).pushReplacementNamed(AboutPage.routeName);
         }
       },
