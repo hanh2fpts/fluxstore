@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluxstore/presentation/menu/menu_page.dart';
-import 'package:fluxstore/presentation/setting/setting_color.dart';
-
 import 'setting_noti_page.dart';
 
 class SettingPage extends StatelessWidget {
@@ -41,7 +39,8 @@ class SettingPage extends StatelessWidget {
               SettingItemWidget(
                 title: 'Notification',
                 imagePath: 'assets/icons/Bell_duotone.svg',
-                selectFunction: () => Navigator.of(context).pushNamed(SettingNotificationPage.routeName),
+                selectFunction: () =>
+                    Navigator.of(context).pushNamed(SettingNotificationPage.routeName),
               ),
               SettingItemWidget(
                 title: 'Terms of Use',
@@ -57,11 +56,6 @@ class SettingPage extends StatelessWidget {
                 title: 'Chat support',
                 imagePath: 'assets/icons/chat.svg',
                 selectFunction: () {},
-              ),
-              SettingItemWidget(
-                title: 'Color Theme',
-                imagePath: 'assets/icons/moon.svg',
-                selectFunction: () => Navigator.of(context).pushNamed(SettingColor.routeName),
               ),
             ],
           ),

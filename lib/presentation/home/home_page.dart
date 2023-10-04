@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     const ProfilePage(),
   ];
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  /// set title page
   String setTitlePage(int currentIndex) {
     switch (currentIndex) {
       case 0:

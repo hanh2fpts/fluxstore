@@ -5,7 +5,6 @@ import 'package:fluxstore/presentation/account/log_in_page.dart';
 import 'package:fluxstore/presentation/account/sign_up_page.dart';
 import 'package:fluxstore/presentation/account/verification_code_page.dart';
 import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
-import 'package:fluxstore/presentation/setting/setting_color.dart';
 import 'package:fluxstore/presentation/sidebar/about_page.dart';
 import 'package:fluxstore/presentation/intro/intro_page.dart';
 import 'package:fluxstore/presentation/home/notification_page.dart';
@@ -34,8 +33,6 @@ Route generateRoutes(RouteSettings settings) {
       return CupertinoPageRoute(builder: (context) => const AboutPage());
     case SettingNotificationPage.routeName:
       return CupertinoPageRoute(builder: (context) => const SettingNotificationPage());
-    case SettingColor.routeName:
-      return CupertinoPageRoute(builder: (context) => const SettingColor());
     case ProfileSettingPage.routeName:
       return CupertinoPageRoute(builder: (context) => const ProfileSettingPage());
     case SignUpPage.routeName:
