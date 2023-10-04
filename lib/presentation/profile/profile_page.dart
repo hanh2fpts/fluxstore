@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/presentation/account/log_in_page.dart';
+import 'package:fluxstore/presentation/profile/address_page.dart';
 import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
+import 'package:fluxstore/presentation/profile/rate_app_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -56,7 +58,7 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).pushNamed(AddressPage.routeName),
                     title: const Text('Address'),
                     trailing: const Icon(Icons.arrow_forward_ios),
                     leading: const Icon(Icons.place),
@@ -84,7 +86,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   const Divider(),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).pushNamed(RateAppPage.routeName),
                     title: const Text('Rate this app'),
                     trailing: const Icon(Icons.arrow_forward_ios),
                     leading: const Icon(Icons.star),

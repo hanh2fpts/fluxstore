@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluxstore/app_config/text_style_config.dart';
 import 'package:fluxstore/presentation/menu/menu_page.dart';
 import 'setting_noti_page.dart';
 
@@ -15,10 +16,7 @@ class SettingPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             'Setting',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
+            style: TextStyleConfig.titleStyle,
           ),
           leading: IconButton(
             onPressed: () => scaffoldKey.currentState?.openDrawer(),

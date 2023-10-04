@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/app_config/text_style_config.dart';
 import 'package:fluxstore/presentation/menu/menu_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -46,10 +47,7 @@ class _SupportPageState extends State<SupportPage> {
       appBar: AppBar(
         title: const Text(
           'Support',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          style: TextStyleConfig.titleStyle,
         ),
         leading: IconButton(
           onPressed: () => scaffoldKey.currentState?.openDrawer(),

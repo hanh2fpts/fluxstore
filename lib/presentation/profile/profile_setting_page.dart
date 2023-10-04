@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/app_config/text_style_config.dart';
 
 class ProfileSettingPage extends StatelessWidget {
   const ProfileSettingPage({super.key});
@@ -10,10 +11,7 @@ class ProfileSettingPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Profile Setting',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          style: TextStyleConfig.titleStyle,
         ),
       ),
       body: SingleChildScrollView(

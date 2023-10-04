@@ -442,7 +442,11 @@ class _ListFeatureProductWidgetState extends State<ListFeatureProductWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                  ),
                   height: 300,
                   width: 200,
                   child: AspectRatio(

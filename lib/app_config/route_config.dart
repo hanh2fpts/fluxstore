@@ -4,7 +4,9 @@ import 'package:fluxstore/presentation/account/forgot_password_page.dart';
 import 'package:fluxstore/presentation/account/log_in_page.dart';
 import 'package:fluxstore/presentation/account/sign_up_page.dart';
 import 'package:fluxstore/presentation/account/verification_code_page.dart';
+import 'package:fluxstore/presentation/profile/address_page.dart';
 import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
+import 'package:fluxstore/presentation/profile/rate_app_page.dart';
 import 'package:fluxstore/presentation/sidebar/about_page.dart';
 import 'package:fluxstore/presentation/intro/intro_page.dart';
 import 'package:fluxstore/presentation/home/notification_page.dart';
@@ -45,6 +47,10 @@ Route generateRoutes(RouteSettings settings) {
       return CupertinoPageRoute(builder: (context) => const VerificationCodePage());
     case CreateNewPasswordPage.routeName:
       return CupertinoPageRoute(builder: (context) => const CreateNewPasswordPage());
+    case AddressPage.routeName:
+      return CupertinoPageRoute(builder: (context) => const AddressPage());
+    case RateAppPage.routeName:
+      return CupertinoPageRoute(builder: (context) => const RateAppPage());
     default:
       return CupertinoPageRoute(builder: (context) => const HomePage());
   }

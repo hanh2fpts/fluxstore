@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluxstore/app_config/text_style_config.dart';
 
 class SettingNotificationPage extends StatefulWidget {
   const SettingNotificationPage({super.key});
@@ -19,10 +20,7 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
       appBar: AppBar(
         title: const Text(
           'Notification',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          style: TextStyleConfig.titleStyle,
         ),
       ),
       body: Column(

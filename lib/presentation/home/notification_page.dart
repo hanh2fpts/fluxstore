@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/app_config/text_style_config.dart';
 
 import '../../model/notification_model.dart';
 
@@ -19,10 +20,7 @@ class NotificationPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             'Notification',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
+            style: TextStyleConfig.titleStyle,
           ),
         ),
         body: ListView.builder(

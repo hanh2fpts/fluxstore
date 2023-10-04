@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/app_config/app_config.dart';
+import 'package:fluxstore/app_config/text_style_config.dart';
 import 'package:fluxstore/presentation/discover/discover_page.dart';
 import 'package:fluxstore/presentation/menu/menu_page.dart';
 import 'package:fluxstore/presentation/home/notification_page.dart';
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
     const ProfilePage(),
   ];
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   /// set title page
   String setTitlePage(int currentIndex) {
     switch (currentIndex) {
@@ -48,10 +50,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text(
             setTitlePage(AppConfig.currentIndex),
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
+            style: TextStyleConfig.titleStyle,
           ),
           leading: IconButton(
             onPressed: () => scaffoldKey.currentState?.openDrawer(),
@@ -72,6 +71,8 @@ class _HomePageState extends State<HomePage> {
           children: pages,
         ),
         bottomNavigationBar: NavigationBar(
+          height: 60,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           animationDuration: const Duration(milliseconds: 5),
           onDestinationSelected: (value) {
             setState(() {

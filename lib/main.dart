@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -12,6 +13,7 @@ Future<void> main() async {
   Injection.init();
   await Injection.instance.allReady();
   SystemChannels.textInput.invokeMethod('TextInput.hide');
+  AppConfig.cameras = await availableCameras();
   runApp(const MyApp());
 }
 
