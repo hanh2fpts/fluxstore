@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/presentation/account/log_in_page.dart';
 import 'package:fluxstore/presentation/profile/address_page.dart';
+import 'package:fluxstore/presentation/profile/payment_page.dart';
 import 'package:fluxstore/presentation/profile/profile_setting_page.dart';
 import 'package:fluxstore/presentation/profile/rate_app_page.dart';
 
@@ -65,7 +66,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   const Divider(),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).pushNamed(PaymentMethodPage.routeName),
                     title: const Text('Payment method'),
                     trailing: const Icon(Icons.arrow_forward_ios),
                     leading: const Icon(Icons.payment),

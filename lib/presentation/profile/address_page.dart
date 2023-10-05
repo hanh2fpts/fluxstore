@@ -9,7 +9,9 @@ class AddressPage extends StatefulWidget {
   @override
   State<AddressPage> createState() => _AddressPageState();
 }
+
 enum SingingCharacter { home, work }
+
 class _AddressPageState extends State<AddressPage> {
   SingingCharacter _character = SingingCharacter.work;
 
@@ -41,15 +43,11 @@ class _AddressPageState extends State<AddressPage> {
                     RichText(
                       text: const TextSpan(
                         text: 'SEND TO \n',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: TextStyle(fontWeight: FontWeight.w400),
                         children: <TextSpan>[
                           TextSpan(
                             text: 'My Office',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: TextStyle(fontWeight: FontWeight.w400),
                           ),
                         ],
                       ),
@@ -86,15 +84,11 @@ class _AddressPageState extends State<AddressPage> {
                     RichText(
                       text: const TextSpan(
                         text: 'SEND TO \n',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: TextStyle(fontWeight: FontWeight.w400),
                         children: <TextSpan>[
                           TextSpan(
                             text: 'My home',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: TextStyle(fontWeight: FontWeight.w400),
                           ),
                         ],
                       ),

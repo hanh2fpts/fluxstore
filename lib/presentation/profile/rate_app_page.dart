@@ -85,24 +85,16 @@ class _RateAppPageState extends State<RateAppPage> {
                       try {
                         // Ensure that the camera is initialized.
                         await _initializeControllerFuture;
-
-                        // Attempt to take a picture and get the file `image`
-                        // where it was saved.
                         final image = await _controller.takePicture();
-
                         if (!mounted) return;
-
                         await Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => DisplayPictureScreen(
-                              // Pass the automatically generated path to
-                              // the DisplayPictureScreen widget.
                               imagePath: image.path,
                             ),
                           ),
                         );
                       } catch (e) {
-                        // If an error occurs, log the error to the console.
                         if (kDebugMode) {
                           print(e);
                         }
@@ -117,7 +109,7 @@ class _RateAppPageState extends State<RateAppPage> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                       ),
-                      child: const Icon(Icons.camera),
+                      child: const Icon(Icons.camera_alt),
                     ),
                   )
                 ],
