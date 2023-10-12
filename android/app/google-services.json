@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "362062814614",
+    "project_id": "fluxstore-a1630",
+    "storage_bucket": "fluxstore-a1630.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362062814614:android:1f2a875f542704013b51b7",
+        "android_client_info": {
+          "package_name": "com.example.fluxstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI57fFT0BdCo73u5jqZeUhXAqjl37fgD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

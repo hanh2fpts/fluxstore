@@ -22,11 +22,15 @@ class _RateAppPageState extends State<RateAppPage> {
   @override
   void initState() {
     super.initState();
-    _controller = CameraController(
-      AppConfig.cameras.first,
-      ResolutionPreset.medium,
-    );
-    _initializeControllerFuture = _controller.initialize();
+    try {
+      _controller = CameraController(
+        AppConfig.cameras[0],
+        ResolutionPreset.max,
+      );
+      _initializeControllerFuture = _controller.initialize();
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
